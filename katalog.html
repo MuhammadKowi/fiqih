@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Katalog Menu | Halalan Thayyiban</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .page-header {
+            background: linear-gradient(rgba(4, 78, 59, 0.8), rgba(4, 78, 59, 0.9)), url('header-bg.png');
+            background-size: cover;
+            background-position: center;
+            padding: 8rem 0 4rem;
+            color: white;
+            text-align: center;
+        }
+
+        .page-header h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .filter-container {
+            position: sticky;
+            top: 80px;
+            z-index: 100;
+            background: white;
+            padding: 1.5rem 0;
+            box-shadow: var(--shadow-sm);
+            margin-bottom: 3rem;
+        }
+
+        .filter-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+        }
+
+        .filter-btn {
+            padding: 0.75rem 2rem;
+            border-radius: 50px;
+            font-weight: 600;
+            border: 1px solid var(--emerald-100);
+            background: white;
+            color: var(--emerald-700);
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .filter-btn.active {
+            background: var(--emerald-600);
+            color: white;
+            border-color: var(--emerald-600);
+        }
+
+        .menu-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 2.5rem;
+            margin-bottom: 6rem;
+        }
+
+        .menu-card {
+            background: white;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: var(--shadow-md);
+            transition: var(--transition);
+            border: 1px solid var(--slate-100);
+        }
+
+        .menu-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-xl);
+        }
+
+        .menu-img {
+            height: 250px;
+            position: relative;
+        }
+
+        .menu-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .price-tag {
+            position: absolute;
+            bottom: 1rem;
+            left: 1rem;
+            background: var(--emerald-600);
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 10px;
+            font-weight: 700;
+            box-shadow: var(--shadow-md);
+        }
+
+        .menu-body {
+            padding: 2rem;
+        }
+
+        .menu-body h3 {
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+            color: var(--emerald-900);
+        }
+
+        .menu-body p {
+            color: var(--slate-600);
+            font-size: 0.95rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .menu-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-top: 1px solid var(--slate-100);
+            padding-top: 1.5rem;
+        }
+
+        .rating {
+            color: var(--gold-500);
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 0.3rem;
+        }
+
+        .btn-order {
+            background: var(--gold-500);
+            color: white;
+            padding: 0.6rem 1.2rem;
+            border-radius: 10px;
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+
+        .btn-order:hover {
+            background: var(--gold-600);
+        }
+        
+        .navbar.scrolled .nav-links a {
+            color: var(--slate-600);
+        }
+        .navbar .nav-links a {
+            color: white;
+        }
+        .navbar.scrolled .logo .text-emerald {
+            color: var(--emerald-600);
+        }
+        .navbar.scrolled .btn-outline-white-gold {
+            border-color: var(--emerald-600);
+            color: var(--emerald-600);
+        }
+        .btn-outline-white-gold {
+            border: 2px solid var(--gold-400);
+            color: var(--gold-400);
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navbar -->
+    <nav class="navbar" id="navbar">
+        <div class="container nav-container">
+            <a href="index.html" class="logo">
+                <i class="fas fa-leaf text-emerald"></i> <span class="text-emerald">Halalan</span> <span class="text-gold">Thayyiban</span>
+            </a>
+            <ul class="nav-links">
+                <li><a href="index.html">Beranda</a></li>
+                <li><a href="sertifikasi.html">Sertifikasi Halal</a></li>
+                <li><a href="katalog.html">Katalog Menu</a></li>
+                <li><a href="edukasi.html">Edukasi Halal</a></li>
+                <li><a href="tentang.html">Tentang Kami</a></li>
+            </ul>
+            <div class="nav-actions">
+                <a href="dashboard.html" class="btn-outline-white-gold">Dashboard Vendor</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Header -->
+    <header class="page-header">
+        <div class="container">
+            <h1>Katalog Menu Premium</h1>
+            <p>Pilihan hidangan terbaik untuk setiap momen berharga Anda</p>
+        </div>
+    </header>
+
+    <!-- Filters -->
+    <div class="filter-container">
+        <div class="container">
+            <div class="filter-buttons">
+                <button class="filter-btn active">Semua</button>
+                <button class="filter-btn">Prasmanan</button>
+                <button class="filter-btn">Nasi Kotak</button>
+                <button class="filter-btn">Bento</button>
+                <button class="filter-btn">Tumpeng</button>
+                <button class="filter-btn">Snack Box</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Menu Grid -->
+    <main class="container">
+        <div class="menu-grid">
+            <!-- Item 1 -->
+            <article class="menu-card" data-category="prasmanan">
+                <div class="menu-img">
+                    <img src="https://placehold.co/800x1200/044e3b/ffffff?text=Halal+Certificate" alt="Halal Certificate">
+                    <span class="price-tag">Mulai Rp 45.000</span>
+                </div>
+                <div class="menu-body">
+                    <h3>Prasmanan Royal</h3>
+                    <p>Paket lengkap dengan 10 pilihan menu utama, aneka dessert, dan free flow minuman untuk acara pernikahan mewah.</p>
+                    <div class="menu-footer">
+                        <div class="rating">
+                            <i class="fas fa-star"></i> 4.9 (120+ Review)
+                        </div>
+                        <a href="#" class="btn-order">Detail Paket</a>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Item 2 -->
+            <article class="menu-card" data-category="bento">
+                <div class="menu-img">
+                    <img src="https://placehold.co/800x600/044e3b/ffffff?text=Bento+Box" alt="Bento Box">
+                    <span class="price-tag">Rp 35.000</span>
+                </div>
+                <div class="menu-body">
+                    <h3>Executive Bento</h3>
+                    <p>Nasi uduk/putih, ayam bakar madu, sambal goreng ati, tumis sayuran, dan buah segar dalam kemasan eksklusif.</p>
+                    <div class="menu-footer">
+                        <div class="rating">
+                            <i class="fas fa-star"></i> 4.8 (85+ Review)
+                        </div>
+                        <a href="#" class="btn-order">Detail Paket</a>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Item 3 -->
+            <article class="menu-card" data-category="tumpeng">
+                <div class="menu-img">
+                    <img src="https://placehold.co/800x600/044e3b/ffffff?text=Ulang+Tahun" alt="Tumpeng">
+                    <span class="price-tag">Rp 450.000</span>
+                </div>
+                <div class="menu-body">
+                    <h3>Tumpeng Syukuran</h3>
+                    <p>Tumpeng kuning porsi 10-15 orang dengan hiasan cantik dan lauk pauk lengkap tradisional Nusantara.</p>
+                    <div class="menu-footer">
+                        <div class="rating">
+                            <i class="fas fa-star"></i> 5.0 (40+ Review)
+                        </div>
+                        <a href="#" class="btn-order">Detail Paket</a>
+                    </div>
+                </div>
+            </article>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container" style="text-align: center;">
+            <a href="index.html" class="logo" style="justify-content: center; margin-bottom: 2rem; color: white;">
+                <i class="fas fa-leaf" style="color: #10b981;"></i> <span style="color: #10b981;">Halalan</span> <span style="color: var(--gold-400);">Thayyiban</span>
+            </a>
+            <p>&copy; 2026 Halalan Thayyiban. Hak Cipta Dilindungi.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edukasi Halal | Halalan Thayyiban</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .page-header {
+            background: linear-gradient(rgba(4, 78, 59, 0.8), rgba(4, 78, 59, 0.9)), url('edu-bg.png');
+            background-size: cover;
+            background-position: center;
+            padding: 8rem 0 4rem;
+            color: white;
+            text-align: center;
+        }
+
+        .education-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 4rem;
+            margin: 6rem 0;
+        }
+
+        .article-card {
+            background: white;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: var(--shadow-md);
+            margin-bottom: 3rem;
+            transition: var(--transition);
+        }
+
+        .article-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .article-img {
+            height: 400px;
+            width: 100%;
+            object-fit: cover;
+        }
+
+        .article-content {
+            padding: 3rem;
+        }
+
+        .article-tag {
+            background: var(--gold-100);
+            color: var(--gold-700);
+            padding: 0.4rem 1rem;
+            border-radius: 50px;
+            font-size: 0.85rem;
+            font-weight: 700;
+            display: inline-block;
+            margin-bottom: 1.5rem;
+        }
+
+        .article-content h2 {
+            font-size: 2.2rem;
+            margin-bottom: 1.5rem;
+            color: var(--emerald-900);
+        }
+
+        .article-content p {
+            font-size: 1.1rem;
+            color: var(--slate-600);
+            line-height: 1.8;
+            margin-bottom: 2rem;
+        }
+
+        .sidebar {
+            position: sticky;
+            top: 100px;
+            height: fit-content;
+        }
+
+        .sidebar-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 20px;
+            box-shadow: var(--shadow-sm);
+            margin-bottom: 2rem;
+        }
+
+        .sidebar-card h3 {
+            font-size: 1.3rem;
+            margin-bottom: 1.5rem;
+            border-bottom: 2px solid var(--emerald-50);
+            padding-bottom: 0.5rem;
+        }
+
+        .recent-list {
+            list-style: none;
+        }
+
+        .recent-item {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+            align-items: center;
+        }
+
+        .recent-item img {
+            width: 80px;
+            height: 80px;
+            border-radius: 10px;
+            object-fit: cover;
+        }
+
+        .recent-info h4 {
+            font-size: 1rem;
+            margin-bottom: 0.2rem;
+            line-height: 1.3;
+        }
+
+        .recent-info span {
+            font-size: 0.8rem;
+            color: var(--slate-400);
+        }
+
+        .knowledge-box {
+            background: var(--emerald-900);
+            color: white;
+            padding: 2.5rem;
+            border-radius: 20px;
+            text-align: center;
+        }
+
+        .knowledge-box i {
+            font-size: 3rem;
+            color: var(--gold-400);
+            margin-bottom: 1.5rem;
+        }
+
+        .navbar.scrolled .nav-links a {
+            color: var(--slate-600);
+        }
+        .navbar .nav-links a {
+            color: white;
+        }
+        .navbar.scrolled .logo .text-emerald {
+            color: var(--emerald-600);
+        }
+        .navbar.scrolled .btn-outline-white-gold {
+            border-color: var(--emerald-600);
+            color: var(--emerald-600);
+        }
+        .btn-outline-white-gold {
+            border: 2px solid var(--gold-400);
+            color: var(--gold-400);
+        }
+        /* Modal Styles */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 2000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.8);
+            backdrop-filter: blur(5px);
+            overflow-y: auto;
+        }
+
+        .modal-content {
+            background-color: white;
+            margin: 5% auto;
+            padding: 3rem;
+            border-radius: 30px;
+            width: 80%;
+            max-width: 900px;
+            position: relative;
+            animation: modalSlideUp 0.4s ease;
+        }
+
+        @keyframes modalSlideUp {
+            from { transform: translateY(50px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+
+        .close-modal {
+            position: absolute;
+            right: 25px;
+            top: 20px;
+            font-size: 2rem;
+            font-weight: bold;
+            color: var(--slate-400);
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .close-modal:hover {
+            color: var(--emerald-600);
+        }
+
+        #modalBody h2 {
+            font-size: 2.5rem;
+            color: var(--emerald-900);
+            margin-bottom: 2rem;
+            margin-top: 1rem;
+        }
+
+        #modalBody img {
+            width: 100%;
+            height: 400px;
+            object-fit: cover;
+            border-radius: 20px;
+            margin-bottom: 2rem;
+        }
+
+        #modalBody p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: var(--slate-600);
+            margin-bottom: 1.5rem;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navbar -->
+    <nav class="navbar" id="navbar">
+        <div class="container nav-container">
+            <a href="index.html" class="logo">
+                <i class="fas fa-leaf text-emerald"></i> <span class="text-emerald">Halalan</span> <span class="text-gold">Thayyiban</span>
+            </a>
+            <ul class="nav-links">
+                <li><a href="index.html">Beranda</a></li>
+                <li><a href="sertifikasi.html">Sertifikasi Halal</a></li>
+                <li><a href="katalog.html">Katalog Menu</a></li>
+                <li><a href="edukasi.html">Edukasi Halal</a></li>
+                <li><a href="tentang.html">Tentang Kami</a></li>
+            </ul>
+            <div class="nav-actions">
+                <a href="dashboard.html" class="btn-outline-white-gold">Dashboard Vendor</a>
+            </div>
+            <button class="mobile-menu-btn">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Header -->
+    <header class="page-header">
+        <div class="container">
+            <h1>Edukasi Halal</h1>
+            <p>Memahami makna Halal dan Thayyib dalam kehidupan sehari-hari</p>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <div class="container">
+        <div class="education-grid">
+            <main>
+                <article class="article-card" style="border: 2px solid var(--gold-400);">
+                    <div class="article-content" style="background: var(--emerald-50);">
+                        <span class="article-tag">Landasan Makalah</span>
+                        <h2 style="font-family: var(--font-secondary);">Visi Digitalisasi Katering: Menuju Keberkahan yang Terukur</h2>
+                        <div style="font-size: 1.05rem; line-height: 1.8; color: var(--slate-700);">
+                            <p style="margin-bottom: 1.5rem;">Dalam ajaran Islam, konsumsi makanan tidak hanya sekadar untuk memenuhi kebutuhan biologis, melainkan juga merupakan bentuk ketaatan ibadah kepada Allah SWT. Al-Qur’an secara tegas memerintahkan seluruh umat manusia untuk mengonsumsi makanan yang <strong>halal dan thayyib (baik)</strong>, sebagaimana termaktub dalam <strong>QS. Al-Baqarah ayat 168</strong>.</p>
+                            
+                            <p style="margin-bottom: 1.5rem;">Konsep <em>halalan thayyiban</em> memberikan standar bahwa makanan yang dikonsumsi harus sah secara syariat sekaligus terjamin kebersihan, keamanan, dan nilai gizinya bagi tubuh. Namun, pada kenyataannya, banyak pelaku usaha katering yang masih mengelola data operasional secara manual, menimbulkan celah ketidakpastian (syubhat) karena terbatasnya transparansi.</p>
+                            
+                            <p style="margin-bottom: 1.5rem;">Pengembangan sistem informasi manajemen dan e-katalog berbasis web ini hadir sebagai solusi. Teknologi informasi bukan sekadar alat bisnis, melainkan <strong>Wasilah (sarana)</strong> untuk menjaga amanah dan kejujuran dalam berniaga, memastikan rekam jejak (traceability) sertifikasi halal dari setiap bahan baku yang digunakan.</p>
+                        </div>
+                        <a href="#" class="btn-primary read-more" data-article="latar-belakang">Baca Analisis Lengkap</a>
+                    </div>
+                </article>
+                <article class="article-card">
+                    <img src="https://placehold.co/800x500/044e3b/ffffff?text=Halal+and+Thayyib" alt="Halal & Thayyib" class="article-img">
+                    <div class="article-content">
+                        <span class="article-tag">Konsep Dasar</span>
+                        <h2>Perbedaan Antara Halal dan Thayyib</h2>
+                        <p>Banyak yang memahami Halal hanya sebatas "boleh dimakan", namun Islam juga menekankan aspek Thayyib (baik/kualitas). Halal berkaitan dengan hukum syariat, sementara Thayyib berkaitan dengan kebersihan, kesehatan, dan kebermanfaatan bagi tubuh.</p>
+                        <p>Mengonsumsi makanan yang Halalan Thayyiban berarti kita memperhatikan dari mana sumber makanan tersebut berasal, bagaimana cara penyembelihannya, hingga bagaimana proses memasaknya agar kandungan gizinya tetap terjaga dan tidak membahayakan kesehatan.</p>
+                        <a href="#" class="btn-primary read-more" data-article="1">Baca Selengkapnya</a>
+                    </div>
+                </article>
+
+                <article class="article-card">
+                    <img src="https://placehold.co/800x500/044e3b/ffffff?text=Halal+Lifestyle" alt="Halal Lifestyle" class="article-img">
+                    <div class="article-content">
+                        <span class="article-tag">Gaya Hidup</span>
+                        <h2>Menu Halal untuk Generasi Modern</h2>
+                        <p>Di era saat ini, gaya hidup halal telah menjadi tren global. Tidak hanya di negara Muslim, tapi juga di seluruh dunia. Makanan halal diakui memiliki standar kebersihan yang lebih tinggi karena proses produksinya yang sangat diawasi.</p>
+                        <a href="#" class="btn-primary read-more" data-article="2">Baca Selengkapnya</a>
+                    </div>
+                </article>
+            </main>
+
+            <aside class="sidebar">
+                <div class="sidebar-card">
+                    <h3>Artikel Terpopuler</h3>
+                    <div class="recent-list">
+                        <div class="recent-item">
+                            <img src="https://placehold.co/100x100/044e3b/ffffff?text=Tips" alt="">
+                            <div class="recent-info">
+                                <h4>Tips Memilih Daging Segar</h4>
+                                <span>15 Juni 2026</span>
+                            </div>
+                        </div>
+                        <div class="recent-item">
+                            <img src="https://placehold.co/100x100/044e3b/ffffff?text=Bahan" alt="">
+                            <div class="recent-info">
+                                <h4>Daftar Bahan Syubhat</h4>
+                                <span>12 Juni 2026</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="sidebar-card">
+                    <h3>Mutiara Hadits</h3>
+                    <div style="font-style: italic; color: var(--emerald-800); border-left: 3px solid var(--gold-400); padding-left: 1rem; margin-bottom: 2rem;">
+                        <p style="font-size: 1rem; margin-bottom: 0.5rem;">"Wahai sekalian manusia, sesungguhnya Allah itu Thayyib (baik) dan tidak menerima kecuali yang thayyib."</p>
+                        <small>— HR. Muslim</small>
+                    </div>
+                    <div style="font-style: italic; color: var(--emerald-800); border-left: 3px solid var(--gold-400); padding-left: 1rem;">
+                        <p style="font-size: 1rem; margin-bottom: 0.5rem;">"Mencari yang halal adalah wajib bagi setiap muslim."</p>
+                        <small>— HR. Thabrani</small>
+                    </div>
+                </div>
+
+                <div class="knowledge-box">
+                    <i class="fas fa-lightbulb"></i>
+                    <h3>Tahukah Anda?</h3>
+                    <p>Sertifikat Halal Indonesia kini berlaku seumur hidup selama tidak ada perubahan bahan atau proses produksi.</p>
+                </div>
+            </aside>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container" style="text-align: center;">
+            <a href="index.html" class="logo" style="justify-content: center; margin-bottom: 2rem; color: white;">
+                <i class="fas fa-leaf" style="color: #10b981;"></i> <span style="color: #10b981;">Halalan</span> <span style="color: var(--gold-400);">Thayyiban</span>
+            </a>
+            <p>&copy; 2026 Halalan Thayyiban. Hak Cipta Dilindungi.</p>
+        </div>
+    </footer>
+
+    <!-- Article Modal -->
+    <div id="articleModal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <div id="modalBody">
+                <!-- Content injected via JS -->
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

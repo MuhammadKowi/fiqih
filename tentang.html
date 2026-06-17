@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tentang Kami | Halalan Thayyiban</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .page-header {
+            background: linear-gradient(rgba(16, 185, 129, 0.9), rgba(4, 78, 59, 0.9)), url('about-bg.png');
+            background-size: cover;
+            background-position: center;
+            padding: 8rem 0 4rem;
+            color: white;
+            text-align: center;
+        }
+
+        .about-section {
+            padding: 6rem 0;
+            background: white;
+        }
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 5rem;
+            align-items: center;
+        }
+
+        .about-image {
+            position: relative;
+        }
+
+        .about-image img {
+            width: 100%;
+            border-radius: 30px;
+            box-shadow: var(--shadow-xl);
+        }
+
+        .experience-badge {
+            position: absolute;
+            bottom: -30px;
+            right: -30px;
+            background: var(--gold-500);
+            color: white;
+            padding: 2rem;
+            border-radius: 20px;
+            text-align: center;
+            box-shadow: var(--shadow-lg);
+        }
+
+        .experience-badge span {
+            display: block;
+            font-size: 2.5rem;
+            font-weight: 800;
+            line-height: 1;
+        }
+
+        .vision-mission {
+            background: var(--emerald-50);
+            padding: 6rem 0;
+        }
+
+        .vision-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 3rem;
+        }
+
+        .vision-card {
+            background: white;
+            padding: 3rem;
+            border-radius: 25px;
+            text-align: center;
+            box-shadow: var(--shadow-md);
+        }
+
+        .vision-card i {
+            font-size: 2.5rem;
+            color: var(--emerald-600);
+            margin-bottom: 1.5rem;
+        }
+
+        .stats-section {
+            background: var(--emerald-900);
+            color: white;
+            padding: 5rem 0;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            text-align: center;
+        }
+
+        .stat-item h3 {
+            font-size: 3rem;
+            color: var(--gold-400);
+            margin-bottom: 0.5rem;
+        }
+
+        .navbar.scrolled .nav-links a {
+            color: var(--slate-600);
+        }
+        .navbar .nav-links a {
+            color: white;
+        }
+        .navbar.scrolled .logo .text-emerald {
+            color: var(--emerald-600);
+        }
+        .navbar.scrolled .btn-outline-white-gold {
+            border-color: var(--emerald-600);
+            color: var(--emerald-600);
+        }
+        .btn-outline-white-gold {
+            border: 2px solid var(--gold-400);
+            color: var(--gold-400);
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navbar -->
+    <nav class="navbar" id="navbar">
+        <div class="container nav-container">
+            <a href="index.html" class="logo">
+                <i class="fas fa-leaf text-emerald"></i> <span class="text-emerald">Halalan</span> <span class="text-gold">Thayyiban</span>
+            </a>
+            <ul class="nav-links">
+                <li><a href="index.html">Beranda</a></li>
+                <li><a href="sertifikasi.html">Sertifikasi Halal</a></li>
+                <li><a href="katalog.html">Katalog Menu</a></li>
+                <li><a href="edukasi.html">Edukasi Halal</a></li>
+                <li><a href="tentang.html">Tentang Kami</a></li>
+            </ul>
+            <div class="nav-actions">
+                <a href="dashboard.html" class="btn-outline-white-gold">Dashboard Vendor</a>
+            </div>
+            <button class="mobile-menu-btn">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Header -->
+    <header class="page-header">
+        <div class="container">
+            <h1>Tentang Kami</h1>
+            <p>Warisan rasa yang terjaga dengan nilai-nilai spiritual</p>
+        </div>
+    </header>
+
+    <!-- About Section -->
+    <section class="about-section">
+        <div class="container">
+            <div class="about-grid">
+                <div class="about-image">
+                    <img src="https://placehold.co/800x800/044e3b/ffffff?text=Our+Chef" alt="Our Chef">
+                    <div class="experience-badge">
+                        <span>15+</span>
+                        Tahun Pengalaman
+                    </div>
+                </div>
+                <div class="about-text">
+                    <h2 style="font-size: 2.5rem; margin-bottom: 1.5rem; color: var(--emerald-900);">Digitalisasi Sebagai Wasilah Amanah</h2>
+                    <p style="font-size: 1.1rem; color: var(--slate-600); margin-bottom: 1.5rem;">Halalan Thayyiban bukan sekadar bisnis kuliner. Kami adalah hasil dari integrasi antara prinsip syariah dengan kemajuan Sains dan Teknologi (Saintek). Berdasarkan <strong>QS. Al-Baqarah: 168</strong>, kami berkomitmen menghadirkan standar transparansi tinggi melalui sistem informasi manajemen yang terkomputerisasi.</p>
+                    <p style="font-size: 1.1rem; color: var(--slate-600); margin-bottom: 2rem;">Kami mengatasi tantangan praktis katering konvensional yang sering kali manual dan berisiko memunculkan keraguan (syubhat), dengan cara mendigitalkan setiap rekam jejak sertifikasi bahan baku demi menjamin aspek ketaatan ibadah pelanggan kami.</p>
+                    <a href="katalog.html" class="btn-primary">Lihat Produk Kami</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Vision Mission -->
+    <section class="vision-mission">
+        <div class="container">
+            <div class="vision-grid">
+                <div class="vision-card">
+                    <i class="fas fa-bullseye"></i>
+                    <h3>Visi Strategis</h3>
+                    <p>Menjadi pionir platform manajemen katering berbasis syariah yang mengedepankan transparansi digital dan kepastian hukum sesuai UU JPH.</p>
+                </div>
+                <div class="vision-card">
+                    <i class="fas fa-shield-halal" style="color: var(--emerald-600); font-size: 2.5rem; margin-bottom: 1.5rem; display: block;"></i>
+                    <h3>Misi Digitalisasi</h3>
+                    <p>Mendigitalkan rantai pasok pangan untuk memastikan setiap bahan baku terverifikasi halal dan menjaga kualitas keamanan pangan (Thayyib).</p>
+                </div>
+                <div class="vision-card">
+                    <i class="fas fa-hand-holding-heart"></i>
+                    <h3>Nilai Ketaatan</h3>
+                    <p>Mewujudkan kejujuran berniaga sebagai bentuk ibadah kepada Allah SWT melalui rekayasa sistem informasi yang akurat.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats -->
+    <section class="stats-section">
+        <div class="container">
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <h3>5K+</h3>
+                    <p>Acara Terlayani</p>
+                </div>
+                <div class="stat-item">
+                    <h3>100%</h3>
+                    <p>Halal Certified</p>
+                </div>
+                <div class="stat-item">
+                    <h3>20+</h3>
+                    <p>Koki Profesional</p>
+                </div>
+                <div class="stat-item">
+                    <h3>4.9/5</h3>
+                    <p>Rating Pelanggan</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container" style="text-align: center;">
+            <a href="index.html" class="logo" style="justify-content: center; margin-bottom: 2rem; color: white;">
+                <i class="fas fa-leaf" style="color: #10b981;"></i> <span style="color: #10b981;">Halalan</span> <span style="color: var(--gold-400);">Thayyiban</span>
+            </a>
+            <p>&copy; 2026 Halalan Thayyiban. Hak Cipta Dilindungi.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

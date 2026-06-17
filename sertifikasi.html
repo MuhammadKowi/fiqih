@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sertifikasi Halal | Halalan Thayyiban</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .page-header {
+            background: linear-gradient(rgba(4, 78, 59, 0.8), rgba(4, 78, 59, 0.9)), url('cert-bg.png');
+            background-size: cover;
+            background-position: center;
+            padding: 8rem 0 4rem;
+            color: white;
+            text-align: center;
+        }
+
+        .certification-content {
+            padding: 6rem 0;
+            background: white;
+        }
+
+        .cert-info {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .cert-image {
+            background: var(--emerald-50);
+            padding: 3rem;
+            border-radius: 30px;
+            border: 2px dashed var(--emerald-200);
+            text-align: center;
+        }
+
+        .cert-image img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: var(--shadow-lg);
+        }
+
+        .cert-text h2 {
+            font-size: 2.5rem;
+            color: var(--emerald-900);
+            margin-bottom: 1.5rem;
+        }
+
+        .cert-text p {
+            margin-bottom: 1.5rem;
+            color: var(--slate-600);
+            font-size: 1.1rem;
+        }
+
+        .check-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+            margin-bottom: 1.2rem;
+        }
+
+        .check-item i {
+            color: var(--emerald-600);
+            margin-top: 0.3rem;
+        }
+
+        .check-item span {
+            font-weight: 600;
+            color: var(--emerald-800);
+        }
+
+        .process-section {
+            background: var(--slate-50);
+            padding: 6rem 0;
+        }
+
+        .process-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .process-card {
+            background: white;
+            padding: 2.5rem;
+            border-radius: 20px;
+            text-align: center;
+            box-shadow: var(--shadow-sm);
+            transition: var(--transition);
+        }
+
+        .process-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-md);
+        }
+
+        .process-icon {
+            width: 70px;
+            height: 70px;
+            background: var(--emerald-50);
+            color: var(--emerald-600);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.8rem;
+            margin: 0 auto 1.5rem;
+        }
+
+        .navbar.scrolled .nav-links a {
+            color: var(--slate-600);
+        }
+        .navbar .nav-links a {
+            color: white;
+        }
+        .navbar.scrolled .logo .text-emerald {
+            color: var(--emerald-600);
+        }
+        .navbar.scrolled .btn-outline-white-gold {
+            border-color: var(--emerald-600);
+            color: var(--emerald-600);
+        }
+        .btn-outline-white-gold {
+            border: 2px solid var(--gold-400);
+            color: var(--gold-400);
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navbar -->
+    <nav class="navbar" id="navbar">
+        <div class="container nav-container">
+            <a href="index.html" class="logo">
+                <i class="fas fa-leaf text-emerald"></i> <span class="text-emerald">Halalan</span> <span class="text-gold">Thayyiban</span>
+            </a>
+            <ul class="nav-links">
+                <li><a href="index.html">Beranda</a></li>
+                <li><a href="sertifikasi.html">Sertifikasi Halal</a></li>
+                <li><a href="katalog.html">Katalog Menu</a></li>
+                <li><a href="edukasi.html">Edukasi Halal</a></li>
+                <li><a href="tentang.html">Tentang Kami</a></li>
+            </ul>
+            <div class="nav-actions">
+                <a href="dashboard.html" class="btn-outline-white-gold">Dashboard Vendor</a>
+            </div>
+            <button class="mobile-menu-btn">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Header -->
+    <header class="page-header">
+        <div class="container">
+            <h1>Sertifikasi Halal</h1>
+            <p>Jaminan kehalalan 100% untuk ketenangan hati Anda</p>
+        </div>
+    </header>
+
+    <!-- Certification Content -->
+    <section class="certification-content">
+        <div class="container">
+            <div class="cert-info">
+                <div class="cert-image">
+                    <img src="https://placehold.co/800x1200/044e3b/ffffff?text=Halal+Certificate" alt="Halal Certificate">
+                </div>
+                <div class="cert-text">
+                    <h2>Komitmen Kami pada Kualitas Halal</h2>
+                    <p>Di Halalan Thayyiban, kami memahami bahwa makanan yang halal bukan sekadar label, melainkan sebuah amanah. Kami memastikan setiap bahan dan proses pengolahan memenuhi standar tertinggi.</p>
+                    
+                    <div class="check-item">
+                        <i class="fas fa-check-circle"></i>
+                        <div>
+                            <span>Bahan Baku Terpilih</span>
+                            <p>Kami hanya menggunakan bahan baku yang memiliki sertifikat halal MUI dan terjamin kesegarannya.</p>
+                        </div>
+                    </div>
+
+                    <div class="check-item">
+                        <i class="fas fa-check-circle"></i>
+                        <div>
+                            <span>Dapur Standar Halal</span>
+                            <p>Fasilitas pengolahan kami terpisah dan terjaga kebersihannya sesuai syariat (Thayyib).</p>
+                        </div>
+                    </div>
+
+                    <div class="check-item">
+                        <i class="fas fa-check-circle"></i>
+                        <div>
+                            <span>Sertifikasi Resmi</span>
+                            <p>Telah diaudit secara berkala oleh LPPOM MUI dan memiliki nomor registrasi resmi.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Process Section -->
+    <section class="process-section">
+        <div class="container">
+            <h2 style="text-align: center; font-size: 2.5rem; margin-bottom: 3rem;">Proses Jaminan Halal</h2>
+            <div class="process-grid">
+                <div class="process-card">
+                    <div class="process-icon"><i class="fas fa-search"></i></div>
+                    <h3>Seleksi Bahan</h3>
+                    <p>Audit ketat pada setiap suplier bahan baku.</p>
+                </div>
+                <div class="process-card">
+                    <div class="process-icon"><i class="fas fa-hand-holding-heart"></i></div>
+                    <h3>Penyimpanan</h3>
+                    <p>Penyimpanan higienis mencegah kontaminasi.</p>
+                </div>
+                <div class="process-card">
+                    <div class="process-icon"><i class="fas fa-fire"></i></div>
+                    <h3>Pengolahan</h3>
+                    <p>Dimasak oleh koki terlatih standar halal.</p>
+                </div>
+                <div class="process-card">
+                    <div class="process-icon"><i class="fas fa-truck-fast"></i></div>
+                    <h3>Pengantaran</h3>
+                    <p>Distribusi aman dengan kemasan tertutup.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container" style="text-align: center;">
+            <a href="index.html" class="logo" style="justify-content: center; margin-bottom: 2rem; color: white;">
+                <i class="fas fa-leaf" style="color: #10b981;"></i> <span style="color: #10b981;">Halalan</span> <span style="color: var(--gold-400);">Thayyiban</span>
+            </a>
+            <p>&copy; 2026 Halalan Thayyiban. Hak Cipta Dilindungi.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
